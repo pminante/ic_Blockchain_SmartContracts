@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { Console } = require('console');
 const ganache = require('ganache-cli');
 const Web3 = require('web3');
 const web3 = new Web3(ganache.provider());
@@ -17,7 +18,7 @@ beforeEach(async () => {
       arguments: ['Hi there!'],
     })
     .send({ from: accounts[0], gas: '1000000' });
-    
+    console.log(inbox);
 });
 
 describe('Inbox', () => {
